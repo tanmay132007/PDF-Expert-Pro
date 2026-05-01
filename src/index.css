@@ -1,0 +1,85 @@
+:root {
+  /* LIGHT MODE TOKENS */
+  --primary-500: #E53935;
+  --primary-700: #B71C1C;
+  --primary-100: #FFEBEE;
+  --secondary-500: #1A1A2E;
+  --surface-bg: #F7F8FC;
+  --surface-card: #FFFFFF;
+  --text-primary: #1A1A2E;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+  --border-default: #E2E8F0;
+  --radius-primary-btn: 12px;
+  --shadow-level-1: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-level-2: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-level-4: 0 16px 56px rgba(0, 0, 0, 0.22);
+  --semantic-success: #38A169;
+  --semantic-error: #E53E3E;
+}
+
+/* DARK MODE OVERRIDES */
+body.dark-theme {
+  --surface-bg: #0F0F1A;
+  --surface-card: #1A1A2E;
+  --surface-modal: #2D3748;
+  --surface-nav: #1A1A2E;
+  --text-primary: #F7F8FC;
+  --text-secondary: #CBD5E0;
+  --text-muted: #718096;
+  --border-default: #2D3748;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 390px;
+  height: 100vh;
+  max-height: 844px;
+  background-color: var(--surface-bg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-level-4);
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  height: 52px; width: 100%;
+  background-color: var(--primary-500);
+  color: #FFF; border: none; border-radius: 12px;
+  font-weight: 600; font-size: 16px;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+
+.btn-secondary {
+  height: 52px; width: 100%;
+  background-color: transparent;
+  color: var(--primary-500); border: 1.5px solid var(--primary-500);
+  border-radius: 12px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+
+.input-field {
+  height: 56px; width: 100%; padding: 0 16px;
+  border-radius: 10px; border: 1px solid var(--border-default);
+  background-color: var(--surface-card); color: var(--text-primary);
+  font-family: 'Inter'; font-size: 16px; outline: none;
+}
+
+.heading-h2 { font-family: 'Sora'; font-weight: 600; font-size: 22px; color: var(--text-primary); }
+.title-md { font-family: 'Inter'; font-weight: 500; font-size: 16px; color: var(--text-primary); }
+.body-md { font-family: 'Inter'; font-size: 14px; color: var(--text-secondary); }
+.label-sm { font-size: 11px; font-weight: 500; color: var(--text-muted); }
+.caption { font-size: 12px; color: var(--text-muted); }
