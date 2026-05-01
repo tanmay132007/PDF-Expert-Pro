@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CAPACITOR_TELEMETRY: 0
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
@@ -35,7 +37,9 @@ jobs:
           java-version: '17'
 
       - name: Sync Capacitor
-        run: npx cap sync android
+        run: |
+          # Try to sync, if it fails because platform missing, add it
+          npx cap sync android || (npx cap add android && npx cap sync android)
 
       - name: Build APK with Gradle
         run: |
